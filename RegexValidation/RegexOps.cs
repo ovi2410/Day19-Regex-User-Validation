@@ -15,7 +15,8 @@ namespace RegexValidation
 
         // public static string RegexRule = "^[1-9]{2} [6-9]{1}[0-9]{9}$";  // validate Mobile Number
 
-        public static string RegexRule = "(?=[A-Z])[a-zA-Z]{8}";
+        public static string RegexRule = "(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]{8}";
+        //Validate password which has atleast one Uppercase char and atleast one number
         public bool ValidateUserName(string User_Pass)
         {
             {
