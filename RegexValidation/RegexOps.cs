@@ -5,11 +5,11 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace RegexValidation
+namespace RegexValidation 
 {
     internal class RegexOps
     {
-        public static string RegexRule = "^[A-Z][A-Za-z]{3}";
+        public static string RegexRule = "(^[A-Z][A-Za-z]{3,20})+( [A-Z]{1}[A-Za-z]{3,20})$";
 
         public bool ValidateUserName(string username)
         {

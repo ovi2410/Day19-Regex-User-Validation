@@ -1,12 +1,14 @@
 ﻿// See https://aka.ms/new-console-template for more information
 //Console.WriteLine("Hello, World!");
+
+
 using RegexValidation;
 
 Console.WriteLine("----- Regex User Validation -----\n");
 
 RegexOps pattern = new RegexOps();
 
-Console.Write("Enter the First Name of the User :- ");
+Console.Write("Enter the First_Last Name of the User :- ");
 string username = Console.ReadLine();
 if (pattern.ValidateUserName(username))
 {
