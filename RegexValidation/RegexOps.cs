@@ -13,12 +13,13 @@ namespace RegexValidation
 
         // public static string RegexRule = "^([A-Za-z0-9]{3,20})([.][A-Za-z0-9]{1,10})*([@][A-Za-z]{2,5})+[.][A-Za-z]{2,3}([.][A-Za-z]{2,3})?$";//Validate Email_ID
 
-        public static string RegexRule = "^[1-9]{2} [6-9]{1}[0-9]{9}$";
+        // public static string RegexRule = "^[1-9]{2} [6-9]{1}[0-9]{9}$";  // validate Mobile Number
 
-        public bool ValidateUserName(string User_MailID)
+        public static string RegexRule = "^[a-zA-z]{8}$";
+        public bool ValidateUserName(string User_Pass)
         {
             {
-                return Regex.IsMatch(User_MailID, RegexRule);
+                return Regex.IsMatch(User_Pass, RegexRule);
 
             }
         }
