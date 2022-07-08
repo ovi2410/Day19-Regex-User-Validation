@@ -7,13 +7,13 @@ Console.WriteLine("----- Regex User Validation -----\n");
 
 RegexOps pattern = new RegexOps();
 
-Console.Write("Enter Email_Id of the User :- ");
-string User_MailID = Console.ReadLine();
-if (pattern.ValidateUserName(User_MailID))
+Console.Write("Enter Mobile Number of the User :- ");
+string User_MobNo = Console.ReadLine();
+if (pattern.ValidateUserName(User_MobNo))
 {
-    Console.WriteLine("\n>> User Mail_ID format is Valid....");
+    Console.WriteLine("\n>> User Mobile Number format is valid....");
 }
 else
 {
-    Console.WriteLine("\n>> User Mail_ID format is Invalid....");
+    Console.WriteLine("\n>> User Mobile Number format is Invalid....");
 }
