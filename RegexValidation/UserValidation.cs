@@ -6,7 +6,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace RegexValidation
-{ 
+{
     public class UserValidation
     {
         //intit Instance Variables
@@ -44,95 +44,168 @@ namespace RegexValidation
         //TO validate FirstName
         public static string Validate_FirstName(string FirstName_input)
         {
-            Regex Pattern = new Regex("^[A-Z][A-Za-z]{2,20}$");
-            bool res = Pattern.IsMatch(FirstName_input);
-            if (res)
+
+            try
             {
-                //Console.WriteLine("\n> First Name Valid...");
-                //return FirstName_input;
-                return "Valid";
+                Regex Pattern = new Regex("^[A-Z][A-Za-z]{2,20}$");
+                bool res = Pattern.IsMatch(FirstName_input);
+                if (FirstName_input.Equals(""))
+                {
+                    throw new CustomException_For_UserValidation(CustomException_For_UserValidation.ExceptionType.EMPTY_MESSAGE, "First Name can not be Empty!!");
+                }
+
+                if (res)
+                {
+                    //Console.WriteLine("\n> First Name Valid...");
+                    //return FirstName_input;
+                    return "Valid First Name...";
+                }
+                else
+                {
+                    //Console.WriteLine("\n> First Name Invalid!!");
+                    //return default;
+                    throw new CustomException_For_UserValidation(CustomException_For_UserValidation.ExceptionType.INVALID_MESSAGE, "Invalid First Name!!");
+                }
+
             }
-            else
+            catch (ArgumentNullException)
             {
-                //Console.WriteLine("\n> First Name Invalid!!");
-                //return default;
-                return "Invalid";
+                //return e.Message;
+                throw new CustomException_For_UserValidation(CustomException_For_UserValidation.ExceptionType.NULL_MESSAGE, "First Name Can not be Null!!");
+
+
             }
 
         }
         //TO validate LastName
         public static string Validate_LastName(string LastName_input)
         {
-            Regex Pattern = new Regex("^[A-Z][A-Za-z]{2,20}$");
-            bool res = Pattern.IsMatch(LastName_input);
-            if (res)
+            try
             {
-                //Console.WriteLine("\n> Last Name Valid...");
-                //return LastName_input;
-                return "Valid";
+                Regex Pattern = new Regex("^[A-Z][A-Za-z]{2,20}$");
+                bool res = Pattern.IsMatch(LastName_input);
+                if (LastName_input.Equals(""))
+                {
+                    throw new CustomException_For_UserValidation(CustomException_For_UserValidation.ExceptionType.EMPTY_MESSAGE, "Last Name can not be Empty!!");
+                }
+
+                if (res)
+                {
+                    //Console.WriteLine("\n> Last Name Valid...");
+                    //return LastName_input;
+                    return "Valid Last Name...";
+                }
+                else
+                {
+                    //Console.WriteLine("\n> Last Name Invalid!!");
+                    //return default;
+                    throw new CustomException_For_UserValidation(CustomException_For_UserValidation.ExceptionType.INVALID_MESSAGE, "Invalid Last Name!!");
+                }
+
             }
-            else
+            catch (ArgumentNullException)
             {
-                //Console.WriteLine("\n> Last Name Invalid!!");
-                //return default;
-                return "Invalid";
+                throw new CustomException_For_UserValidation(CustomException_For_UserValidation.ExceptionType.NULL_MESSAGE, "Last Name Can not be Null!!");
+
             }
 
         }
         //TO validate Mobile Number
         public static string Validate_MobileNo(string MobileNo_input)
         {
-            Regex Pattern = new Regex("^[1-9]{2} [6-9]{1}[0-9]{9}$");
-            bool res = Pattern.IsMatch(MobileNo_input);
-            if (res)
+            try
             {
-                //Console.WriteLine("\n> Mobile Number Valid...");
-                //return MobileNo_input;
-                return "Valid";
+                Regex Pattern = new Regex("^[1-9]{2} [6-9]{1}[0-9]{9}$");
+                bool res = Pattern.IsMatch(MobileNo_input);
+                if (MobileNo_input.Equals(""))
+                {
+                    throw new CustomException_For_UserValidation(CustomException_For_UserValidation.ExceptionType.EMPTY_MESSAGE, "Mobile Number can not be Empty!!");
+                }
+
+                if (res)
+                {
+                    //Console.WriteLine("\n> Mobile Number  Valid...");
+                    //return MobileNo_input;
+                    return "Valid Mobile Number...";
+                }
+                else
+                {
+                    //Console.WriteLine("\n> Mobile Number  Invalid!!");
+                    //return default;
+                    throw new CustomException_For_UserValidation(CustomException_For_UserValidation.ExceptionType.INVALID_MESSAGE, "Invalid Mobile Number !!");
+                }
+
             }
-            else
+            catch (ArgumentNullException)
             {
-                //Console.WriteLine("\n> Mobile Number Invalid!!");
-                //return default;
-                return "Invalid";
+                throw new CustomException_For_UserValidation(CustomException_For_UserValidation.ExceptionType.NULL_MESSAGE, "Mobile Number Can not be Null!!");
+
             }
 
         }
         //TO validate Email ID
         public static string Validate_EmailId(string EmailId_input)
         {
-            Regex Pattern = new Regex("^([A-Za-z0-9]{3,20})([.+-_*][A-Za-z0-9]{1,10})*([@][A-Za-z]{1,5})+[.][A-Za-z]{2,3}([.][A-Za-z]{2,3})?$");
-            bool res = Pattern.IsMatch(EmailId_input);
-            if (res)
+            try
             {
-                //Console.WriteLine("\n> Email Id Valid...");
-                //return EmailId_input;
-                return "Valid";
+                Regex Pattern = new Regex("^([A-Za-z0-9]{3,20})([.+-_*][A-Za-z0-9]{1,10})*([@][A-Za-z]{1,5})+[.][A-Za-z]{2,3}([.][A-Za-z]{2,3})?$");
+                bool res = Pattern.IsMatch(EmailId_input);
+                if (EmailId_input.Equals(""))
+                {
+                    throw new CustomException_For_UserValidation(CustomException_For_UserValidation.ExceptionType.EMPTY_MESSAGE, "Email ID can not be Empty!!");
+                }
+
+                if (res)
+                {
+                    //Console.WriteLine("\n> Email ID Valid...");
+                    //return EmailId_input;
+                    return "Valid Email ID...";
+                }
+                else
+                {
+                    //Console.WriteLine("\n> Email ID Invalid!!");
+                    //return default;
+                    throw new CustomException_For_UserValidation(CustomException_For_UserValidation.ExceptionType.INVALID_MESSAGE, "Invalid Email ID!!");
+                }
+
             }
-            else
+            catch (ArgumentNullException)
             {
-                //Console.WriteLine("\n> Email Id Invalid!!");
-                //return default;
-                return "Invalid";
+                throw new CustomException_For_UserValidation(CustomException_For_UserValidation.ExceptionType.NULL_MESSAGE, "Email ID Can not be Null!!");
+
             }
 
         }
         //TO validate Password
         public static string Validate_Password(string Password_input)
         {
-            Regex Pattern = new Regex("(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$_])[a-zA-Z0-9@#$_]{8}");
-            bool res = Pattern.IsMatch(Password_input);
-            if (res)
+            try
             {
-                //Console.WriteLine("\n> Password Valid...");
-                //return Password_input;
-                return "Valid";
+                Regex Pattern = new Regex("(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$_])[a-zA-Z0-9@#$_]{8}");
+                bool res = Pattern.IsMatch(Password_input);
+                if (Password_input.Equals(""))
+                {
+                    throw new CustomException_For_UserValidation(CustomException_For_UserValidation.ExceptionType.EMPTY_MESSAGE, "Password can not be Empty!!");
+                }
+
+                if (res)
+                {
+                    //Console.WriteLine("\n> Password Valid...");
+                    //return Password_input;
+                    return "Valid Password...";
+                }
+                else
+                {
+                    //Console.WriteLine("\n> Password Invalid!!");
+                    //return default;
+                    throw new CustomException_For_UserValidation(CustomException_For_UserValidation.ExceptionType.INVALID_MESSAGE, "Invalid Password!!");
+                }
+
             }
-            else
+            catch (ArgumentNullException)
             {
-                //Console.WriteLine("\n> Password Invalid!!");
-                //return default;
-                return "Invalid";
+                throw new CustomException_For_UserValidation(CustomException_For_UserValidation.ExceptionType.NULL_MESSAGE, "Password Can not be Null!!");
+
             }
 
         }
